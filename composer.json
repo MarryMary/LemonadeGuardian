@@ -1,0 +1,20 @@
+{
+    "name": "mary/lemguard",
+    "description": "Authorize and registration system for ClearSky PHP Framework.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MarryMary",
+            "email": "92404990+MarryMary@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clsk\\Lemonade\\": "Components/"
+        }
+    }
+}

@@ -41,19 +41,6 @@ class LemonadeCore
         }
     }
 
-    public function Register(string $email, string $token="", string $password = "", string $username = "", string $pictpath = "")
-    {
-        $register = new Register();
-        $result = $register->Check($email, $token);
-        if($result == "pre"){
-            $register->PreRegister($email, $token);
-        }else if($result == "main"){
-            $register->Register($email, $token, $password, $username, $pictpath);
-        }else{
-            return false;
-        }
-    }
-
     public function Update(string $old_or_new, string $password, string $mode="email", string $new = "")
     {
         $authorizer = new Authorizer();

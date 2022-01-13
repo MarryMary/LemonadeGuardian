@@ -66,7 +66,7 @@ class Register
         if(trim($email) != "" && trim($token) != "" && trim($password) != "" && trim($username) != "" && trim($pictpath) != "" && $this->Check($email, $token) == "pre" && $tools->PasswordValid($password)){
             $insert_array = [
                 "Email" => $email,
-                "Password" => $password,
+                "Password" => password_hash($password, PASSWORD_DEFAULT),
                 "UserName" => $username,
                 "UserPictPath" => $pictpath
             ];

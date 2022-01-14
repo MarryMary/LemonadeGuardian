@@ -20,6 +20,7 @@ class LemonadeCore
                     Session::Start();
                     Session::Insert("isAuth", true);
                     Session::Insert("email", $email);
+                    return true;
                 }
             };
         }

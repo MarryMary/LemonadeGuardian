@@ -1,10 +1,8 @@
 <?php
-namespace Clsk\Lemonade;
-
 use Clsk\Elena\Databases\Migration;
 use Clsk\Elena\Databases\Ignition;
 
-class Lemonade extends Migration{
+class TableCreator extends Migration{
     
     public function Execution()
     {
@@ -21,6 +19,7 @@ class Lemonade extends Migration{
             $ignition->AutoIncrement("Id");
             $ignition->VarChar("Email", 256);
             $ignition->VarChar("Token");
+            $ignition->Created_At();
         });
 
         Migration::Create("ClMiliLemonadePassReset", function(Ignition $ignition) {
@@ -35,5 +34,6 @@ class Lemonade extends Migration{
     {
         Migration::Reverse("ClMiliLemonadeUsers");
         Migration::Reverse("ClMiliLemonadePreUsers");
+        Migration::Reverse("ClMiliLemonadePassReset");
     }
 }
